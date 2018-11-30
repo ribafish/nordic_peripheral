@@ -1,4 +1,4 @@
-# Perpipheral device part for Master Thesis
+# Peripheral device part for Master Thesis
 
 
 * Eclipse setup: https://devzone.nordicsemi.com/tutorials/7/ 
