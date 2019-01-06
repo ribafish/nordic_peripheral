@@ -167,7 +167,7 @@ void peripheral_core_update() {
 			}
 		}
 		break;
-	case PERIPH_CORE_STATE_TEST_NOTIF:
+	case PERIPH_CORE_STATE_NOTIF_SELFTEST:
 		ret_code = peripheral_ble_notify(BLE_SERVICE_TEST, BLE_UUID_CHARA_DATA, data, datalen);
 		if (ret_code == NRF_SUCCESS) {
 			notif_done = false;
@@ -279,7 +279,7 @@ void pc_ctrl_write_handler(uint16_t len, uint8_t * datain) {
 		}
 		memcpy(data,datain, len);	// copy what we got to notify back
 		datalen = len;
-		queue_state(PERIPH_CORE_STATE_TEST_NOTIF);
+		queue_state(PERIPH_CORE_STATE_NOTIF_SELFTEST);
 		ringbuf_u16_printout(&state_core_next);
 		break;
 	case CTRL_CMD_WRITE_TEST_PARAMS:
